@@ -191,7 +191,6 @@
         .product-card:nth-child(3) { animation-delay: 0.3s; }
         .product-card:nth-child(4) { animation-delay: 0.4s; }
         .product-card:nth-child(5) { animation-delay: 0.5s; }
-        .product-card:nth-child(6) { animation-delay: 0.6s; }
 
         @keyframes slideUp {
             from {
@@ -211,23 +210,19 @@
 
         .product-image {
             width: 100%;
-            height: 250px;
-            background: linear-gradient(135deg, #e8f5e9 0%, #c5e1c5 100%);
+            height: 320px;
+            background: #f5f5f5;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 4rem;
-            position: relative;
             overflow: hidden;
+            position: relative;
         }
 
-        .product-image::before {
-            content: 'Before/After';
-            position: absolute;
-            font-size: 0.9rem;
-            color: rgba(74, 107, 74, 0.6);
-            font-family: 'Helvetica Neue', Arial, sans-serif;
-            letter-spacing: 1px;
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .product-info {
@@ -440,113 +435,5 @@
         <h2 class="section-title">Our Signature Products</h2>
         <div class="products-grid">
             <div class="product-card">
-                <div class="product-image">✨</div>
-                <div class="product-info">
-                    <h3 class="product-title">Face Glow Combo</h3>
-                    <p class="product-description">Clears acne and evens skin tone naturally. Achieve that radiant, even complexion you've always wanted.</p>
-                    <span class="badge">Bestseller</span>
-                </div>
-            </div>
-
-            <div class="product-card">
-                <div class="product-image">💆🏾‍♀️</div>
-                <div class="product-info">
-                    <h3 class="product-title">Hair Growth Set</h3>
-                    <p class="product-description">Stimulates natural hair growth and strengthens roots. Say goodbye to breakage and hello to length.</p>
-                    <span class="badge">Popular</span>
-                </div>
-            </div>
-
-            <div class="product-card">
-                <div class="product-image">🌟</div>
-                <div class="product-info">
-                    <h3 class="product-title">Dark Spot Remover Cream</h3>
-                    <p class="product-description">Fades hyperpigmentation and dark spots with powerful natural ingredients for clear, even skin.</p>
-                    <span class="badge">Fast Results</span>
-                </div>
-            </div>
-
-            <div class="product-card">
-                <div class="product-image">🌿</div>
-                <div class="product-info">
-                    <h3 class="product-title">Body Enhancement Oil</h3>
-                    <p class="product-description">Natural body contouring and skin tightening. Enhance your curves while nourishing your skin.</p>
-                    <span class="badge">Premium</span>
-                </div>
-            </div>
-
-            <div class="product-card">
-                <div class="product-image">🔥</div>
-                <div class="product-info">
-                    <h3 class="product-title">Hot Combo for Full Body Care</h3>
-                    <p class="product-description">Complete body transformation package. Everything you need for glowing skin from head to toe.</p>
-                    <span class="badge">Complete Set</span>
-                </div>
-            </div>
-
-            <div class="product-card">
-                <div class="product-image">💫</div>
-                <div class="product-info">
-                    <h3 class="product-title">Acne Treatment Serum</h3>
-                    <p class="product-description">Powerful natural formula that clears stubborn acne and prevents future breakouts effectively.</p>
-                    <span class="badge">New</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section class="testimonials">
-        <h2 class="section-title">What Our Customers Say</h2>
-        <div class="testimonials-grid">
-            <div class="testimonial-card">
-                <div class="stars">★★★★★</div>
-                <p class="testimonial-text">"My dark spots vanished in just a few weeks! I've tried so many products before but Ummu Dufail actually delivered. My skin has never looked better!"</p>
-                <p class="testimonial-author">— Aisha, Abuja</p>
-            </div>
-
-            <div class="testimonial-card">
-                <div class="stars">★★★★★</div>
-                <p class="testimonial-text">"Best natural products ever! My hair is growing so fast and it's stronger than it's been in years. I'm recommending this to all my sisters!"</p>
-                <p class="testimonial-author">— Fatima, Kaduna</p>
-            </div>
-
-            <div class="testimonial-card">
-                <div class="stars">★★★★★</div>
-                <p class="testimonial-text">"The Face Glow Combo changed my life. My acne cleared up and now I get compliments everywhere I go. Thank you Ummu Dufail!"</p>
-                <p class="testimonial-author">— Halima, Lagos</p>
-            </div>
-
-            <div class="testimonial-card">
-                <div class="stars">★★★★★</div>
-                <p class="testimonial-text">"I was skeptical at first, but the results speak for themselves. My skin is glowing, my confidence is back. These products are truly magical!"</p>
-                <p class="testimonial-author">— Zainab, Port Harcourt</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer Section -->
-    <footer class="footer">
-        <div class="footer-content">
-            <h3>Connect with Us</h3>
-            <p>Follow for beauty tips, real results, and exclusive updates</p>
-            
-            <div class="social-links">
-                <a href="https://www.instagram.com/ummu_dufail_gyaran_jiki" target="_blank" class="social-link">
-                    <span class="social-icon">📱</span>
-                    <span>@ummu_dufail_gyaran_jiki on Instagram</span>
-                </a>
-            </div>
-
-            <div class="coming-soon">
-                <p>🌸 Full E-commerce Launch Coming Soon 🌸</p>
-            </div>
-
-            <div class="copyright">
-                <p>&copy; 2025 Ummu Dufail by Zainab Ibrahim. All rights reserved.<br>
-                Natural Beauty • Organic Solutions • Real Results</p>
-            </div>
-        </div>
-    </footer>
-</body>
-  </html>
+                <div class="product-image">
+                    <img src="data:image/jpeg;base64,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
