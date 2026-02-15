@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ummu Dufail - Organic Skincare That Works</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Garamond', serif;
+            color: #2d3b2d;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #e8f5e9 0%, #f1f8e9 50%, #fff9e6 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem 1.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(197, 166, 113, 0.1) 0%, transparent 70%);
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            50% { transform: translate(-30px, -30px) rotate(5deg); }
+        }
+
+        .hero-content {
+            max-width: 800px;
+            position: relative;
+            z-index: 1;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
+            font-weight: 300;
+            color: #4a6b4a;
+            margin-bottom: 1rem;
+            letter-spacing: -1px;
+            line-height: 1.1;
+        }
+
+        .hero h1 strong {
+            color: #c5a671;
+            font-weight: 400;
+        }
+
+        .hero p {
+            font-size: clamp(1rem, 3vw, 1.3rem);
+            color: #5a7a5a;
+            margin-bottom: 2.5rem;
+            line-height: 1.8;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #6b8e6b 0%, #5a7a5a 100%);
+            color: white;
+            padding: 1.2rem 3rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(106, 142, 106, 0.3);
+            letter-spacing: 0.5px;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 25px rgba(106, 142, 106, 0.4);
+            background: linear-gradient(135deg, #5a7a5a 0%, #4a6b4a 100%);
+        }
+
+        /* About Section */
+        .about {
+            padding: 5rem 1.5rem;
+            background: linear-gradient(to bottom, #ffffff 0%, #fafdf8 100%);
+        }
+
+        .about-content {
+            max-width: 900px;
+            margin: 0 auto;
+            animation: fadeIn 1s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 5vw, 3rem);
+            color: #4a6b4a;
+            text-align: center;
+            margin-bottom: 1rem;
+            font-weight: 300;
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(to right, #c5a671, #6b8e6b);
+            margin: 1rem auto;
+            border-radius: 2px;
+        }
+
+        .about p {
+            font-size: clamp(1rem, 2.5vw, 1.2rem);
+            color: #5a7a5a;
+            text-align: center;
+            line-height: 1.9;
+            margin-bottom: 1.5rem;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, rgba(197, 166, 113, 0.2) 0%, rgba(197, 166, 113, 0.05) 100%);
+            padding: 2rem;
+            border-radius: 15px;
+            border-left: 4px solid #c5a671;
+            margin-top: 2rem;
+        }
+
+        /* Products Section */
+        .products {
+            padding: 5rem 1.5rem;
+            background: linear-gradient(135deg, #f5f9f5 0%, #fff9e6 100%);
+        }
+
+        .products-grid {
+            max-width: 1200px;
+            margin: 3rem auto 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+            transition: all 0.4s ease;
+            animation: slideUp 0.6s ease-out backwards;
+        }
+
+        .product-card:nth-child(1) { animation-delay: 0.1s; }
+        .product-card:nth-child(2) { animation-delay: 0.2s; }
+        .product-card:nth-child(3) { animation-delay: 0.3s; }
+        .product-card:nth-child(4) { animation-delay: 0.4s; }
+        .product-card:nth-child(5) { animation-delay: 0.5s; }
+        .product-card:nth-child(6) { animation-delay: 0.6s; }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.12);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, #e8f5e9 0%, #c5e1c5 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-image::before {
+            content: 'Before/After';
+            position: absolute;
+            font-size: 0.9rem;
+            color: rgba(74, 107, 74, 0.6);
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            letter-spacing: 1px;
+        }
+
+        .product-info {
+            padding: 1.8rem;
+        }
+
+        .product-title {
+            font-size: 1.4rem;
+            color: #4a6b4a;
+            margin-bottom: 0.8rem;
+            font-weight: 400;
+        }
+
+        .product-description {
+            font-size: 1rem;
+            color: #6a8a6a;
+            line-height: 1.6;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        .badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #c5a671 0%, #d4b883 100%);
+            color: white;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin-top: 1rem;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            padding: 5rem 1.5rem;
+            background: linear-gradient(to bottom, #ffffff 0%, #fafdf8 100%);
+        }
+
+        .testimonials-grid {
+            max-width: 1100px;
+            margin: 3rem auto 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+            border-top: 4px solid #c5a671;
+            transition: all 0.3s ease;
+            animation: fadeIn 1s ease-out backwards;
+        }
+
+        .testimonial-card:nth-child(1) { animation-delay: 0.2s; }
+        .testimonial-card:nth-child(2) { animation-delay: 0.4s; }
+        .testimonial-card:nth-child(3) { animation-delay: 0.6s; }
+        .testimonial-card:nth-child(4) { animation-delay: 0.8s; }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+        }
+
+        .stars {
+            color: #c5a671;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-text {
+            font-size: 1.05rem;
+            color: #5a7a5a;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        .testimonial-author {
+            color: #4a6b4a;
+            font-weight: 600;
+            font-size: 1rem;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        /* Footer Section */
+        .footer {
+            background: linear-gradient(135deg, #4a6b4a 0%, #3a5a3a 100%);
+            color: white;
+            padding: 4rem 1.5rem 2rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .footer h3 {
+            font-size: clamp(1.5rem, 4vw, 2rem);
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+        }
+
+        .social-links {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1.2rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            color: white;
+            transition: all 0.3s ease;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 1.05rem;
+            width: 100%;
+            max-width: 500px;
+            backdrop-filter: blur(10px);
+        }
+
+        .social-link:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-3px);
+        }
+
+        .social-icon {
+            font-size: 1.8rem;
+        }
+
+        .coming-soon {
+            margin-top: 3rem;
+            padding: 1.5rem;
+            background: rgba(197, 166, 113, 0.2);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+
+        .coming-soon p {
+            font-size: 1.1rem;
+            color: #fff9e6;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            letter-spacing: 0.5px;
+        }
+
+        .copyright {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .hero {
+                min-height: 90vh;
+            }
+            
+            .products-grid,
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .cta-button {
+                padding: 1rem 2.5rem;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Glow Naturally with <strong>Ummu Dufail</strong></h1>
+            <p>Proven herbal remedies for clear skin, dark spot removal, acne treatment, hair growth, body enhancement, and overall natural beauty. Trusted by thousands of women across Nigeria.</p>
+            <a href="#products" class="cta-button">Explore Products</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about">
+        <div class="about-content">
+            <h2 class="section-title">About Ummu Dufail</h2>
+            <p>Led by Zainab Ibrahim, Ummu Dufail specializes in 100% natural and organic skincare solutions that help women look and feel their best.</p>
+            <div class="highlight">
+                <p>We use time-tested herbal ingredients with no harsh chemicals. From clearing pimples and hyperpigmentation to achieving radiant skin and healthy hair, our products deliver real results backed by glowing testimonials from women across Nigeria.</p>
+                <p><strong>Our mission:</strong> Empowering women to embrace their natural beauty with products that actually work.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products" id="products">
+        <h2 class="section-title">Our Signature Products</h2>
+        <div class="products-grid">
+            <div class="product-card">
+                <div class="product-image">✨</div>
+                <div class="product-info">
+                    <h3 class="product-title">Face Glow Combo</h3>
+                    <p class="product-description">Clears acne and evens skin tone naturally. Achieve that radiant, even complexion you've always wanted.</p>
+                    <span class="badge">Bestseller</span>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">💆🏾‍♀️</div>
+                <div class="product-info">
+                    <h3 class="product-title">Hair Growth Set</h3>
+                    <p class="product-description">Stimulates natural hair growth and strengthens roots. Say goodbye to breakage and hello to length.</p>
+                    <span class="badge">Popular</span>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">🌟</div>
+                <div class="product-info">
+                    <h3 class="product-title">Dark Spot Remover Cream</h3>
+                    <p class="product-description">Fades hyperpigmentation and dark spots with powerful natural ingredients for clear, even skin.</p>
+                    <span class="badge">Fast Results</span>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">🌿</div>
+                <div class="product-info">
+                    <h3 class="product-title">Body Enhancement Oil</h3>
+                    <p class="product-description">Natural body contouring and skin tightening. Enhance your curves while nourishing your skin.</p>
+                    <span class="badge">Premium</span>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">🔥</div>
+                <div class="product-info">
+                    <h3 class="product-title">Hot Combo for Full Body Care</h3>
+                    <p class="product-description">Complete body transformation package. Everything you need for glowing skin from head to toe.</p>
+                    <span class="badge">Complete Set</span>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">💫</div>
+                <div class="product-info">
+                    <h3 class="product-title">Acne Treatment Serum</h3>
+                    <p class="product-description">Powerful natural formula that clears stubborn acne and prevents future breakouts effectively.</p>
+                    <span class="badge">New</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <h2 class="section-title">What Our Customers Say</h2>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p class="testimonial-text">"My dark spots vanished in just a few weeks! I've tried so many products before but Ummu Dufail actually delivered. My skin has never looked better!"</p>
+                <p class="testimonial-author">— Aisha, Abuja</p>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p class="testimonial-text">"Best natural products ever! My hair is growing so fast and it's stronger than it's been in years. I'm recommending this to all my sisters!"</p>
+                <p class="testimonial-author">— Fatima, Kaduna</p>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p class="testimonial-text">"The Face Glow Combo changed my life. My acne cleared up and now I get compliments everywhere I go. Thank you Ummu Dufail!"</p>
+                <p class="testimonial-author">— Halima, Lagos</p>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p class="testimonial-text">"I was skeptical at first, but the results speak for themselves. My skin is glowing, my confidence is back. These products are truly magical!"</p>
+                <p class="testimonial-author">— Zainab, Port Harcourt</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="footer-content">
+            <h3>Connect with Us</h3>
+            <p>Follow for beauty tips, real results, and exclusive updates</p>
+            
+            <div class="social-links">
+                <a href="https://www.instagram.com/ummu_dufail_gyaran_jiki" target="_blank" class="social-link">
+                    <span class="social-icon">📱</span>
+                    <span>@ummu_dufail_gyaran_jiki on Instagram</span>
+                </a>
+            </div>
+
+            <div class="coming-soon">
+                <p>🌸 Full E-commerce Launch Coming Soon 🌸</p>
+            </div>
+
+            <div class="copyright">
+                <p>&copy; 2025 Ummu Dufail by Zainab Ibrahim. All rights reserved.<br>
+                Natural Beauty • Organic Solutions • Real Results</p>
+            </div>
+        </div>
+    </footer>
+</body>
+  </html>
